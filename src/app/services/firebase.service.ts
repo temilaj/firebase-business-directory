@@ -7,15 +7,15 @@ import {Category} from '../Category';
 
 @Injectable()
 export class FirebaseService{
-      businessess: FirebaseListObservable<Business[]>;
+      businesses: FirebaseListObservable<Business[]>;
       categories: FirebaseListObservable<Category[]>;
 
         constructor(private _af: AngularFire) {
         }
         getBusinesses(){
-            this.businessess = this._af.database.list('/businesses') as
+            this.businesses = this._af.database.list('/businesses') as
             FirebaseListObservable<Business[]>;
-            return this.businessess;
+            return this.businesses;
         }
         getCategories(){
             this.categories = this._af.database.list('/categories') as

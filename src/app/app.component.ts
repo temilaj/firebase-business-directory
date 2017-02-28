@@ -11,20 +11,32 @@ import {Category} from './Category';
   providers: [FirebaseService]
 })
 export class AppComponent implements OnInit {
-  title = 'app works!';
-  businessess:Business[];
+  title = 'Business Directory';
+  businesses:Business[];
   categories:Category[];
+  appState: string;
+  activeKey: string;
+
   constructor(private _firebaseService:FirebaseService) {
   }
 
   ngOnInit(){
     this._firebaseService.getBusinesses().subscribe(businesses => {
       console.log(businesses);
-      this.businessess = businesses;
+      this.businesses = businesses;
     }); 
     this._firebaseService.getCategories().subscribe(categories => {
       console.log(categories);
       this.categories = categories;
-    }); 
+    });
   }
+  
+  changeState(state, key){
+    console.log('Changing state to: '+state);
+    if(key){
+      console.log('Changing key to: '+key);
+      this.activeKey = key;
+    }
+    this.appState = state;      
+  } 
 }

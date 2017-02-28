@@ -1,8 +1,41 @@
-<h1>
-    {{title}}
-</h1>
-<ul>
-    <li class="text" *ngFor="let business of businessess">
-        {{business.company}}
-    </li>
-</ul>
+<div class="top-bar">
+    <div class="row">
+        <div class="top-bar-left">
+            <ul class="menu">
+                <li class="menu-text">{{title}}</li>
+            </ul>
+        </div>
+        <div class="top-bar-left">
+
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="large-12 columns">
+        <div *ngIf="businesses">
+            <table>
+                <thead>
+                    <tr>
+                        <th>company</th>
+                        <th>Category</th>
+                        <th>Phone</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let business of businesses">
+                        <td>{{business.company}}</td>
+                        <td>{{business.category}}</td>
+                        <td>{{business.phone}}</td>
+                        <td>
+                            <button class="button" (click)="changeState('extend', business.$key)">More</button>
+                            <button class="button secondary">Edit</button>
+                            <button class="button alert">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
