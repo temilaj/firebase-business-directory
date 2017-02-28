@@ -9,12 +9,13 @@ import { AngularFireModule } from 'angularfire2';
 
 // Must export the config
 export const firebaseConfig = {
-  apiKey: '<your-key>',
-  authDomain: '<your-project-authdomain>',
-  databaseURL: '<your-database-URL>',
-  storageBucket: '<your-storage-bucket>',
-  messagingSenderId: '<your-messaging-sender-id>'
+  apiKey: 'AIzaSyAwGooL70PnLs0fcD6lVV0HEHgOq9ZVzUY',
+  authDomain: 'testbase-4f756.firebaseapp.com',
+  databaseURL: 'https://testbase-4f756.firebaseio.com',
+  storageBucket: 'testbase-4f756.appspot.com',
+  messagingSenderId: '329154049453'
 };
+
 @NgModule({
   declarations: [
     AppComponent
