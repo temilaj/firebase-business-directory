@@ -10,7 +10,29 @@
         </div>
     </div>
 </div>
+<br> *
+<div *ngIf="appState == 'extend'">
+    <div class="row">
+        <div class="large-12 columns">
+            <button class="button alert" (click)="changeState('default')">Back</button>
+        </div>
+    </div>
+</div>
 
+<div *ngFor="let business of businesses">
+    <div *ngIf="business.$key == activeKey">
+        <div class="row">
+            <div class="large-5 columns large-offset-1">
+                <h3>{{business.company}}</h3>
+                <td>Industry {{business.category}}</td>
+                <td>Years in operation {{business.years_in_business}}</td>
+            </div>
+            <div class="large-5 columns large-offset-1">
+
+            </div>
+        </div>
+    </div>
+</div>
 <div class="row">
     <div class="large-12 columns">
         <div *ngIf="businesses">
