@@ -22,7 +22,7 @@
     <div class="large-6 columns">
         <label>Filter Category
             <select (change)="filterCategory(filteredCategory.value)" #filteredCategory>
-                <option value="0">Select</option>
+                <option value="all">All</option>
                 <option value="{{category.name}}" *ngFor="let category of categories">{{category.name}}</option>
             </select>
         </label>
